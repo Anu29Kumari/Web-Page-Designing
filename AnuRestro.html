@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AnuRestro</title>		<!-- title of the web page -->
+
+<!-- CSS Styling -->
+<style type ="text/css">
+
+body{	                               /* for desining background of the page */
+	background-color:lightsalmon;
+	}
+
+h1{ 	font-size: 250%;		/*size of heading 1 is 250 % */
+	text-align:center; color:black; font-type:algerian;
+	}
+
+h2{					/* aligning text to left,color of text is set to black, font of text is set to lucida console*/\
+	text-align:left; color:black; font-family:Lucida Console; 
+	}
+
+p{					/*size of paragraph words */	
+	font-size: 150%;
+	}
+
+hr{					/* horizontal line has height of 5 pixel and color is set to purple*/
+	height:5px; border-width:0; background-color:purple;
+	}	
+
+table{ 					/* table with 90% covering the screen*/
+	border: 0px solid black;
+	width:90%;
+	}
+
+td{					/*table data with border of 1 pixel and solid blue color. Text in table is aligned to center. */ 
+	border:1px solid blue;
+	text-align:center;
+	padding:8px;
+	}
+
+#dish1{					/*table data with id dish1 has a background image with size 1200pixel and font size of 200% */
+	background-image: url("https://image1.masterfile.com/getImage/NjAwLTAxNjQ2NDk3ZW4uMDAwMDAwMDA=AN-a1L/600-01646497en_Masterfile.jpg");
+	background-repeat:no repeat;
+	background-attachment:fixed;
+	background-size:1200px;
+	font-size:200%;
+	}
+#dish2{					/*table data with id dish2 has a background image with size 1300pixel and font size of 200% */
+	background-image: url("https://previews.123rf.com/images/araraadt/araraadt1404/araraadt140400074/27110061-interior-of-white-summer-restaurant.jpg");
+	background-repeat:no repeat;
+	background-attachment:fixed;
+	background-size:1300px;
+	font-size:200%;
+	}
+#dish3{					/*table data with id dish3 has a font size of 200% */
+		font-size:200%;
+		}
+#dish4{					/*table data with id dish4 has a font size of 200% */
+		font-size:200%;
+		}
+
+tr:nth-child(even){			/* table row with even child has lightgrey background color*/
+			background-color: lightgrey;
+			}
+
+tr:nth-child(odd){			/* table row with even child has pink background color*/
+			background-color:moccasin;
+			}
+			
+.label{	font-size: 150%;}  /*class with name label has a fontsize of 150% */
+
+
+#starter{height:100px;}   /* ids with name starter,main,beverage,deserts and bread has image size of 100pixel*/
+#main{height:100px;}
+#Beverage{height:100px;}
+#Deserts{height:100px;}
+#bread{height:100px;}
+
+#button{ 		/* button has height and width of 10% , font size of 120% and font of type Lucida Console */	
+	height:10%;width:10%;
+	font-size:120%;
+	font-family:Lucida Console;
+		}
+
+#thanks{ 
+	background-color: pink;		/* marquee with id thanks has purple color and font size of 120% */ 
+	color:purple;  
+	font-size:180%;
+	}
+</style>
+
+<!-- Java Script Validation -->
+<script>
+function validatephone(){                                               // to validate the phone number
+	var phonenumber= document.getElementById("phone").value;
+	var re3= /^\d{3}-\d{3}-\d{4}$/;
+	if(re3.test(phonenumber)){
+		document.getElementById("phoneprompt").style.color="Green";
+		document.getElementById("phoneprompt").innerHTML="<strong>valid</strong>";
+		return(true);
+	}
+	else{
+		document.getElementById("phoneprompt").style.color="Red";
+		document.getElementById("phoneprompt").innerHTML="<strong>invalid</strong>";
+		return(false);
+	}
+}
+
+function validatefirstname(){						// to validate first name
+	var first= document.getElementById("firstname").value;
+	var re1= /^[a-zA-z\s\'\-]{2,15}$/;
+	if(re1.test(first)){
+		document.getElementById("firstnameprompt").style.color="Green";
+		document.getElementById("firstnameprompt").innerHTML="<strong>valid</strong>";
+		return(true);
+	}
+	else{
+		document.getElementById("firstnameprompt").style.color="Red";
+		document.getElementById("firstnameprompt").innerHTML="<strong>invalid</strong>";
+		return(false);
+	}
+}
+function validatelastname(){						// to validate last name
+	var last= document.getElementById("lastname").value;
+	var res= /^[a-zA-z\s\'\-]{2,25}$/;
+	if(res.test(last)){
+		document.getElementById("lastnameprompt").style.color="Green";
+		document.getElementById("lastnameprompt").innerHTML="<strong>valid</strong>";
+		return(true);
+	}
+	else{
+		document.getElementById("lastnameprompt").style.color="Red";
+		document.getElementById("lastnameprompt").innerHTML="<strong>invalid</strong>";
+		return(false);
+	}
+}
+</script>
+
+</head>
+<body>
+<h1><u> Welcome To AnuRestro</u></h1> <!-- heading of the webpage -->
+
+<p>   <!-- purpose of chosing this form -->
+I chose to design a food restro form because I love to cook food and serve others who are in need.
+I think food contains a magic that makes everyone happy and keeps us healthy.It is an important part of diet.
+We all know that a healthy outside starts from the inside and when we eat good food, smile comes to our face.
+This food form is very helpful for those who wants to eat delicious food. By giving their details they will get the food.
+Also this form is helpful for future business purpose. If we want to open a restro at a certain place then food will be home delivered.
+Offline and online both form is possible and through this we will get the reviews from others. And design more food form and add 
+extra recipes according to the demands of others and open same type of restro at other places also that would be beneficial for 
+future business. Our restaurant serves delicious and healthy food. We maintain proper hygiene in our restaurant.
+</p>
+
+<form>
+	Date:<input type="date" id="date"><br>		<!-- date type input -->
+
+<table>							<!-- defining table 1-->
+
+<tr>							<!-- table row with input of type radio button-->		
+	<td class="input"><input type="radio" name="salute" value="Mr">Mr<br>
+	<input type="radio" name="salute" value="Mrs">Mrs<br>
+	<input type="radio" name="salute" value="Miss">Miss</td>
+</tr>
+<tr>							<!-- table row with input of type text-->
+	<td class="label">First Name:</td>
+	<td class="input"><input type="text" name="firstname" required id="firstname" placeholder="Enter first name" onblur="validatefirstname();"></td>
+	<td class="feedback"><span id="firstnameprompt">&nbsp;</span></td>
+</tr>
+<tr>							<!-- table row with input of type text-->
+	<td class="label">Last Name:</td>
+	<td class="input"><input type="text" name="lastname" required id="lastname" placeholder="Enter last name" onblur="validatelastname();"></td>
+	<td class="feedback"><span id="lastnameprompt">&nbsp;</span></td>
+</tr>
+<tr>							<!-- table row with input of type text-->
+	<td class="label">Phone No:</td>
+	<td class="input"><input type="text" name="phone" required id="phone" placeholder="xxx-xxx-xxxx" onblur="validatephone();"></td>
+	<td class="feedback"><span id="phoneprompt">xxx-xxx-xxxx</span></td>
+</tr>
+</table>
+
+<hr>			<!-- horizontal line-->
+
+<h2> Menu </h2>		<!-- second heading -->
+
+<hr>
+
+<table>								<!-- defining table 2-->
+<tr>	
+	<td class="label" id="dish1">Select Your Starter Dish:</td>
+	<td class="input">
+		<table>						<!-- defining table inside the 1st row of table 2-->
+		<tr>
+		<td colspan="3"><strong>VEG</Strong></td>
+		</tr>
+		<tr>						<!--table row with input of type checkbox-->
+		<td><input type="checkbox" name="vegstarter" value="Honey Chilli Potato">Honey Chilli Potato</td>
+		<td> <img id="starter" src="https://img-global.cpcdn.com/recipes/c95edbe10fb81f22/1200x630cq70/photo.jpg"/></td>
+		</tr>
+		<tr>						<!--table row with input of type checkbox-->
+		<td><input type="checkbox" name="vegstarter" value="Baby Corn Chilli">Baby Corn Chilli</td>
+		<td> <img id="starter" src="https://adm.fifthseason.com.sg/Dynamic/Products/18/Images/CVGST1800%20CRISPY%20CHILLI%20BBY%20CORN.jpg"/></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="vegstarter" value="Paneer Chilli">Paneer Chilli</td>
+		<td> <img id="starter" src="https://i2.wp.com/www.vegrecipesofindia.com/wp-content/uploads/2015/07/chilli-paneer-dry-recipe-2-1.jpg"/></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="vegstarter" value="Mushroom Chilli">Mushroom Chilli</td>
+		<td> <img id="starter" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQv2FN1bmEuy4LtYpHbYDL0NORzV08DtXjirz7AC4x26AfSH7TQ&usqp=CAU"/></td>
+		</tr>
+		<tr>
+		<td colspan="3"><strong>NON-VEG</Strong></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="nonvegstarter" value="Chicken Chilli">Chicken Chilli</td>
+		<td> <img id="starter" src="https://www.yummytummyaarthi.com/wp-content/uploads/2015/03/1-19.jpg"/></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="nonvegstarter" value="Chicken Drumsticks">Chicken Drumsticks</td>
+		<td> <img id="starter" src="https://www.onceuponachef.com/images/2015/01/Tandoori-Chicken-Drumsticks2.jpg"/></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="nonvegstarter" value="Chicken Afghani">Chicken Afghani</td>
+		<td> <img id="starter" src="https://files2.hungryforever.com/wp-content/uploads/2017/05/22201406/feature-image-afghani-chicken.jpg"/></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="nonvegstarter" value="Chicken Tandoori">Chicken Tandoori</td>
+		<td> <img id="starter" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/chicken-tandori-1526595014.jpg"/></td>
+		</tr>
+		</table>
+	</td>
+</tr>
+<tr>	
+	<td class="label" id="dish3">Select Your Main Course Dish:</td>
+	<td class="input">
+		<table>						<!-- defining table inside the 2nd row of table 2-->
+		<tr>
+		<td colspan="3"><strong>VEG</Strong></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="vegmain" value="Paneer Butter Masala">Paneer Butter Masala</td>
+		<td> <img id="main" src="https://nishkitchen.com/wp-content/uploads/2015/12/PANEER-BUTTER-MASALA-1b-480x480.jpg"/></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="vegmain" value="Paneer Pasanda">Paneer Pasanda</td>
+		<td> <img id="main" src="https://www.indianfoodforever.com/iffwd/wp-content/uploads/2019/10/paneer-pasanda.jpg"/></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="vegmain" value="Paneer Lababdar">Paneer Lababdar</td>
+		<td> <img id="main" src="https://i0.wp.com/www.dhabastyle.com/wp-content/uploads/2017/04/website.jpg?fit=1200%2C674&ssl=1"/></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="vegmain" value="Kadhai Paneer">Kadhai Paneer</td>
+		<td> <img id="main" src="https://www.whiskaffair.com/wp-content/uploads/2018/09/Kadai-Paneer-5.jpg"/></td>
+		</tr>
+		<tr>
+		<td colspan="3"><strong>NON-VEG</Strong></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="nonvegmain" value="Chicken Butter Masala">Chicken Butter Masala</td>
+		<td> <img id="main" src="https://sherebengal.com/wp-content/uploads/2017/09/Chicken-butter-masala-2pcs.jpg"/></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="nonvegmain" value="Chicken Handi">Chicken Handi</td>
+		<td> <img id="main" src="https://i0.wp.com/kalimirchbysmita.com/wp-content/uploads/2017/10/Chicken-Handi-05.jpg"/></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="nonvegmain" value="Chicken Rogan Josh">Chicken Rogan Josh</td>
+		<td> <img id="main" src="https://i.pinimg.com/originals/70/9e/bb/709ebbd46d22c755bb7b4b4db63832ab.gif"/></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="nonvegmain" value="Kadhai Chicken">Kadhai Chicken</td>
+		<td> <img id="main" src="https://mtrfoods.co.nz/wp-content/uploads/2015/06/Kadhai-Chicken.jpg"/></td>
+		</tr>
+		</table>
+	</td>
+</tr>
+<tr>	
+	<td class="label" id="dish2">Select Your Breads:</td>
+	<td class="input">
+		<table>						<!-- defining table inside the 3rd row of table 2-->
+		<tr>
+		<td colspan="3"><strong>Tandoor Se</Strong></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="tandoor" value="Tandoori Roti">Tandoori Roti</td>
+		<td> <img id="bread" src="https://i.ytimg.com/vi/N2aVgU9kiNQ/maxresdefault.jpg"/></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="tandoor" value="Butter Naan">Butter Naan</td>
+		<td> <img id="bread" src="https://camyspizza.ca/dynamic_content/product_images/547/x533_d01f9f50f351c4f0e55199109e5613cc.jpeg.pagespeed.ic.e31Ccx_zvQ.jpg"/></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="tandoor" value="Garlic Naan">Garlic Naan</td>
+		<td> <img id="bread" src="https://media.chefdehome.com/740/0/0/no-yeast-garlic-naan/no-yeast-indian-homemade-garlic-naan-bread-chefdehome-3.jpg"/></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="tandoor" value="Stuffed Naan">Stuffed Naan</td>
+		<td> <img id="bread" src="https://4.bp.blogspot.com/_7XbedkW4p0g/TU_4A7h3PhI/AAAAAAAAEuI/mBfe8SvO8-M/s400/DSC_0202.JPG"/></td>
+		</tr>
+		<tr>
+		<td colspan="3"><strong>Tawa Se</Strong></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="tawa" value="Tawa Roti">Tawa Roti</td>
+		<td> <img id="bread" src="https://ratlamee.com/wp-content/uploads/2018/10/Tawa-Plain-Roti-2.jpg"/></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="tawa" value="Butter Tawa Roti">Butter Tawa Roti</td>
+		<td> <img id="bread" src="https://b.zmtcdn.com/data/dish_photos/ec7/65225793c29edaaf90b3d242cbf7bec7.jpg"/></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="tawa" value="Rumali Roti">Rumali Roti</td>
+		<td> <img id="bread" src="https://i.ndtvimg.com/i/2017-07/roomali-roti_620x350_71499078720.jpg"/></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="tawa" value="Lacha Paratha">Lacha Paratha</td>
+		<td> <img id="bread" src="https://www.merisaheli.com/wp-content/uploads/2018/02/Lachha-Parathas.jpg"/></td>
+		</tr>
+		</table>
+	</td>
+</tr>
+<tr>	
+	<td class="label" id="dish4">Select Your Desert/Beverage:</td>
+	<td class="input">
+		<table>						<!-- defining table inside the 4th row of table 2-->
+		<tr>
+		<td colspan="3"><strong>Deserts</Strong></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="ice cream" value="Strawberry Ice Scoop">Strawberry Ice Scoop</td>
+		<td> <img id="Deserts" src="https://www.featurepics.com/StockImage/20180222/strawberry-ice-cream-stock-photo-4595204.jpg"/></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="sweets" value="Gulab Jamun">Gulab Jamun</td>
+		<td> <img id="Deserts" src="https://www.indianhealthyrecipes.com/wp-content/uploads/2012/11/gulab-jamun-recipe-500x500.jpg"/></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="sweets" value="Rasmalai">Rasmalai</td>
+		<td> <img id="Deserts" src="https://www.archanaskitchen.com/images/archanaskitchen/1-Author/moumita.malla-gmail.com/traditional_rasmalai_recipe.jpg"/></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="cake" value="Choco Lava Cake">Choco Lava Cake</td>
+		<td> <img id="Deserts" src="https://www.handletheheat.com/wp-content/uploads/2014/01/Handle-the-Heat-Chocolate-Lava-Cakes-FInals-11.jpg"/></td>
+		</tr>
+		<tr>
+		<td colspan="3"><strong>Beverage</Strong></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="cold drink" value="Coke">Coke</td>
+		<td> <img id="Beverage" src="https://www.leosela.com/wp-content/uploads/2020/02/1-2378.jpg"/></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="cold drink" value="Lime Soda">Lime Soda</td>
+		<td> <img id="Beverage" src="https://images.eatsmarter.com/sites/default/files/styles/1600x1200/public/mint-and-lime-soda-626734.jpg"/></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="cold drink" value="Sweet Lassi">Sweet Lassi</td>
+		<td> <img id="Beverage" src="https://threewhistleskitchen.com/wp-content/uploads/2019/03/Sweet-lasi-featured.jpg"/></td>
+		</tr>
+		<tr>
+		<td><input type="checkbox" name="cold drink" value="Virgin Mojito">Virgin Mojito</td>
+		<td> <img id="Beverage" src="https://www.driscolls.eu/assets/styles/header/public/content/header/image/blueberry_mojito.jpg?itok=GjHwejyx"/></td>
+		</tr>
+		</table>
+	</td>
+</tr>
+<tr>				<!-- button that show alert message when clicked -->
+	<td colspan="3"><button id="button" onclick="alert('Order placed successfully! Your Buffet would be served shortly.');">Order Now</button></td>
+</tr>
+</table>
+</form>
+<hr>
+<marquee id="thanks"><strong><em> Thank You and Visit Again!</strong></em></marquee>     <!-- Added a marquee with floating message -->
+<hr>
+<br>
+<br>
+</body>
+</html>
